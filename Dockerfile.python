@@ -1,0 +1,14 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENV DB_HOST=10.129.0.23
+ENV DB_USER=app
+ENV DB_PASSWORD=very_strong
+ENV DB_NAME=example
+
+
+CMD ["python", "not_tested_main.py"]
